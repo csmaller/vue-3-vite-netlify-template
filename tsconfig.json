@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "types": [
+      "node",
+      "webpack-env",
+      "jquery",
+      "browser",
+      "webdriverio/sync",
+      "@wdio/mocha-framework",
+      "@wdio/devtools-service",
+      "@wdio/sync",
+      "jest"
+    ],
+    "paths": {
+      "@/*": ["src/*"],
+      "preact/*": ["./stub/empty.d.ts"]
+    },
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "__tests__/**/*.ts",
+    "__tests__/**/*.tsx",
+    "src/store/Auth/index.js"
+  ],
+  "exclude": ["node_modules"]
+}

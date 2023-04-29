@@ -5,7 +5,6 @@ import components from '@/components';
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import router from '@/router';
-console.log(router);
 
 const app = createApp(App);
 app.use(createPinia());

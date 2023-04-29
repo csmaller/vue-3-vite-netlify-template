@@ -1,14 +1,15 @@
 /**
  * PrimeVue default styles.
  */
- @import 'primevue/resources/primevue.min.css';
- @import 'primeicons/primeicons.css';
- @import 'primeflex/primeflex.css';
+ @import '~/primevue/resources/primevue.min.css';
+ @import '~/primeicons/primeicons.css';
+ @import '~/primeflex/primeflex.css';
  
  @import './variables';
  
  * {
    margin: 0;
+
    box-sizing: border-box;
    font-family: var(--font-family);
    -webkit-font-smoothing: antialiased;

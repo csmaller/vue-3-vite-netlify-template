@@ -3,6 +3,7 @@ import { shallowRef, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { LAYOUTS } from '@/enum';
 import Default from '../Default';
+import PublicLayout from '../PublicLayout';
 
 const layout = shallowRef(Default);
 
@@ -18,7 +19,7 @@ watch(
     }
     try {
       console.log(meta.layout);
-      const component = await import(`@/layouts/${meta.layout}`);
+      const component = await import(/* @vite-ignore */ `@/layouts/${meta.layout}`);
       layout.value = component?.default || Default;
     } catch (e) {
       layout.value = meta.layout === LAYOUTS.DEFAULT ? Default : PublicLayout;

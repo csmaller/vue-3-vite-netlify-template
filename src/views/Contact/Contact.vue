@@ -49,9 +49,8 @@ const handleSubmit = async () => {
   };
 
   error.value = false;
-
   await axios
-    .post('/', form.value, axiosConfig)
+    .post('/', encode(form.value), axiosConfig)
     .then((response) => {
       console.log(response);
       if (!error.value) doToast();
@@ -68,9 +67,12 @@ const handleSubmit = async () => {
  * encode the query params
  */
 const encode = (data: FormInterface) => {
-  return Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key as keyof FormInterface])}`)
+  const d = Object.keys(data)
+    .map((key) => `${key}=${data[key as keyof FormInterface]}`)
     .join('&');
+
+  console.log(d);
+  return d;
 };
 
 /**
@@ -87,7 +89,7 @@ const doToast = () => {
 </script>
 
 <template>
-  <form name="contact" method="post" netlify class="flex flex-wrap w-full">
+  <form name="contact" netlify class="flex flex-wrap w-full">
     <div class="flex w-full">
       <h3>Contact Us</h3>
     </div>
@@ -115,7 +117,7 @@ const doToast = () => {
           <div class="p-error">{{ error.$message }}</div>
         </div>
       </div>
-      <Button id="save_btn" type="submit" label="Send" :disabled="v$.$invalid" class="button" />
+      <Button id="save_btn" type="button" label="Send" :disabled="v$.$invalid" class="button" @click="handleSubmit" />
     </div>
   </form>
 </template>

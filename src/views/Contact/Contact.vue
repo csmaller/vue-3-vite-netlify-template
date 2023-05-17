@@ -50,7 +50,7 @@ const handleSubmit = async () => {
 
   error.value = false;
   await axios
-    .post('/', encode(form.value), axiosConfig)
+    .post('/', form.value, axiosConfig)
     .then((response) => {
       console.log(response);
       if (!error.value) doToast();

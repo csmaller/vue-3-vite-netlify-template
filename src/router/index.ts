@@ -1,8 +1,8 @@
 import { RouteRecordRaw, createRouter, createWebHistory } from 'vue-router';
 
 import About from '@/views/About';
-import App from '@/App.vue';
 import Contact from '@/views/Contact';
+import Error404 from '@/views/Error404';
 import Home from '@/views/Home';
 import { LAYOUTS } from '@/enum';
 
@@ -25,6 +25,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'contact',
     component: Contact,
     meta: { layout: LAYOUTS.DEFAULT },
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'error404',
+    component: Error404,
   },
 
   // {

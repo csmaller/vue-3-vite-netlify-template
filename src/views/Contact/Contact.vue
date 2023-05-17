@@ -51,14 +51,7 @@ const handleSubmit = async () => {
   error.value = false;
 
   await axios
-    .post(
-      '/',
-      encode({
-        'form-name': 'contact',
-        ...form.value,
-      }),
-      axiosConfig,
-    )
+    .post('/', form.value, axiosConfig)
     .then((response) => {
       console.log(response);
       if (!error.value) doToast();

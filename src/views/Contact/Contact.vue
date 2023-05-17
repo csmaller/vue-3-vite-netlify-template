@@ -117,7 +117,7 @@ const doToast = () => {
 <template>
   <form
     id="myForm"
-    name="contact"
+    name="motive8contact"
     method="post"
     data-netlify="true"
     data-netlify-honeypot="bot-field"
@@ -128,7 +128,7 @@ const doToast = () => {
       <h3>Contact Us</h3>
     </div>
     <div class="w-full">
-      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="form-name" value="motive8contact" />
       <div class="field flex flex-column">
         <label for="name" class="required">Name</label>
         <!-- <Skeleton v-if="tenantStore.loading" height="2.3rem" class="w-full" /> -->

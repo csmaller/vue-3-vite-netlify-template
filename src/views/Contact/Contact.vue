@@ -43,22 +43,41 @@ const error = ref<boolean>(false);
 /**
  * handle submit. dont need a service layer for now
  */
-const handleSubmit = async () => {
-  const axiosConfig: AxiosRequestConfig = {
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  };
-
-  error.value = false;
-  await axios
-    .post('/', form.value, axiosConfig)
-    .then((response) => {
-      console.log(response);
-      if (!error.value) doToast();
+const handleSubmit = async (e: Event) => {
+  try {
+    error.value = false;
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...form.value }),
     })
-    .catch((e: Error) => {
-      error.value = true;
-      doToast();
-    });
+      .then(() => {
+        if (!error.value) doToast();
+      })
+      .catch((error) => {
+        error.value = true;
+        doToast();
+      });
+  } catch (e) {
+    console.log(e);
+  }
+  e.preventDefault();
+
+  // const axiosConfig: AxiosRequestConfig = {
+  //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  // };
+
+  // error.value = false;
+  // await axios
+  //   .post('/', form.value, axiosConfig)
+  //   .then((response) => {
+  //     console.log(response);
+  //     if (!error.value) doToast();
+  //   })
+  //   .catch((e: Error) => {
+  //     error.value = true;
+  //     doToast();
+  //   });
 };
 
 /**

@@ -44,40 +44,45 @@ const error = ref<boolean>(false);
  * handle submit. dont need a service layer for now
  */
 const handleSubmit = async (e: Event) => {
-  try {
-    error.value = false;
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...form.value }),
-    })
-      .then(() => {
-        if (!error.value) doToast();
-      })
-      .catch((error) => {
-        error.value = true;
-        doToast();
-      });
-  } catch (e) {
-    console.log(e);
-  }
-  e.preventDefault();
-
-  // const axiosConfig: AxiosRequestConfig = {
-  //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  // };
-
-  // error.value = false;
-  // await axios
-  //   .post('/', form.value, axiosConfig)
-  //   .then((response) => {
-  //     console.log(response);
-  //     if (!error.value) doToast();
+  // try {
+  //   error.value = false;
+  //   fetch('/', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //     body: encode({ 'form-name': 'contact', ...form.value }),
   //   })
-  //   .catch((e: Error) => {
-  //     error.value = true;
-  //     doToast();
-  //   });
+  //     .then(() => {
+  //       if (!error.value) doToast();
+  //     })
+  //     .catch((error) => {
+  //       error.value = true;
+  //       doToast();
+  //     });
+  // } catch (e) {
+  //   console.log(e);
+  // }
+  // e.preventDefault();
+  error.value = false;
+  const axiosConfig: AxiosRequestConfig = {
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  };
+  error.value = false;
+  await axios
+    .post(
+      location.href,
+      encode({
+        'form-name': e.target.getAttribute('name'),
+        ...form.value,
+      }),
+      axiosConfig,
+    )
+    .then((response) => {
+      if (!error.value) doToast();
+    })
+    .catch((e: Error) => {
+      error.value = true;
+      doToast();
+    });
 };
 
 /**
@@ -86,12 +91,13 @@ const handleSubmit = async (e: Event) => {
  * encode the query params
  */
 const encode = (data: FormInterface) => {
-  const d = Object.keys(data)
-    .map((key) => `${key}=${data[key as keyof FormInterface]}`)
-    .join('&');
+  const formData = new FormData();
 
-  console.log(d);
-  return d;
+  for (const key of Object.keys(data)) {
+    formData.append(key, data[key as keyof FormInterface]);
+  }
+
+  return formData;
 };
 
 /**
@@ -108,11 +114,19 @@ const doToast = () => {
 </script>
 
 <template>
-  <form name="contact" netlify class="flex flex-wrap w-full">
+  <form
+    id="myForm"
+    name="contact"
+    method="post"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    @submit.prevent="handleSubmit"
+  >
     <div class="flex w-full">
       <h3>Contact Us</h3>
     </div>
     <div class="w-full">
+      <input type="hidden" name="form-name" value="contact" />
       <div class="field flex flex-column">
         <label for="name" class="required">Name</label>
         <!-- <Skeleton v-if="tenantStore.loading" height="2.3rem" class="w-full" /> -->
@@ -136,7 +150,7 @@ const doToast = () => {
           <div class="p-error">{{ error.$message }}</div>
         </div>
       </div>
-      <Button id="save_btn" type="button" label="Send" :disabled="v$.$invalid" class="button" @click="handleSubmit" />
+      <Button id="save_btn" type="submit" label="Send" :disabled="v$.$invalid" class="button" />
     </div>
   </form>
 </template>

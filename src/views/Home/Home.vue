@@ -1,9 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>
-    Welcome to Motive8Endurance home
-    <RouterLink to="/about" v-text="`About`" />
+  <div class="w-full flex justify-content-center">
+    <img src="/src/assets/swimmers.png" />
   </div>
 </template>
 

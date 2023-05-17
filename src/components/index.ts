@@ -1,3 +1,4 @@
+import Address from './Address.vue';
 // Primevue global components
 import Button from 'primevue/button';
 import Card from 'primevue/card';
@@ -6,11 +7,11 @@ import Column from 'primevue/column';
 import ConfirmationService from 'primevue/confirmationservice';
 import DataTable from 'primevue/datatable';
 import Dropdown from 'primevue/dropdown';
-import HelloWorld from './/HelloWorld.vue';
 import InputNumber from 'primevue/inputnumber';
 import InputSwitch from 'primevue/inputswitch';
 import InputText from 'primevue/inputtext';
 import Message from 'primevue/message';
+import Nav from './Nav.vue';
 import Password from 'primevue/password';
 import PrimeVue from 'primevue/config';
 import Skeleton from 'primevue/skeleton';
@@ -38,6 +39,7 @@ export default {
     Vue.component('Tag', Tag);
     Vue.component('Toast', Toast);
     Vue.component('Skeleton', Skeleton);
-    Vue.component('HelloWorld', HelloWorld);
   },
 };
+
+export { Nav, Address };

@@ -1,17 +1,24 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { Nav, Address } from '@/components';
+</script>
 
 <template>
   <div id="default-layout">
-    <div id="main-container">
+    <div id="main-container" class="mt-0">
       <div id="main-container-scroll" class="flex flex-column h-screen overflow-auto">
-        Nav Here
+        <div class="header flex flex-wrap gap-3 align-items-center">
+          <img src="/src/assets/motive8_logo.png" width="200" height="200" class="mt-0" />
+          <Nav />
+        </div>
         <div id="main-content">
           <div class="flex max-width">
-            SideBar here
             <slot />
           </div>
         </div>
       </div>
+      <footer>
+        <Address />
+      </footer>
     </div>
   </div>
 </template>

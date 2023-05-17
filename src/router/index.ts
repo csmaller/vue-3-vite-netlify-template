@@ -2,6 +2,7 @@ import { RouteRecordRaw, createRouter, createWebHistory } from 'vue-router';
 
 import About from '@/views/About';
 import App from '@/App.vue';
+import Contact from '@/views/Contact';
 import Home from '@/views/Home';
 import { LAYOUTS } from '@/enum';
 
@@ -17,6 +18,12 @@ const routes: Array<RouteRecordRaw> = [
     path: '/about',
     name: 'about',
     component: About,
+    meta: { layout: LAYOUTS.DEFAULT },
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: Contact,
     meta: { layout: LAYOUTS.DEFAULT },
   },
 

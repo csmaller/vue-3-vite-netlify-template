@@ -12,13 +12,11 @@ const route = useRoute();
 watch(
   () => route.meta,
   async (meta) => {
-    console.log(meta);
     if (!meta?.layout) {
       layout.value = route.matched[0]?.components?.default;
       return;
     }
     try {
-      console.log(meta.layout);
       const component = await import(/* @vite-ignore */ `@/layouts/${meta.layout}`);
       layout.value = component?.default || Default;
     } catch (e) {

@@ -1,0 +1,43 @@
+.button {
+    background-color:$orange;
+    display: flex;
+    align-items: flex-end;
+    padding: 6px;
+    margin: 0px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    line-height: 1.125;
+    border-radius: 8px;
+    position: relative;
+    transition: padding 0.08s ease-in-out, height 0.08s ease-in-out;
+  
+  
+    &.button-full-width {
+      width: 100%;
+      .button-inner {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  
+    &:disabled {
+      pointer-events: none;
+      box-shadow: none;
+      color:white;
+    }
+  
+    &::before {
+      content: '';
+      border-radius: 0px 0px 8px 8px;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      height: 1rem;
+      width: 100%;
+    }
+  
+  }
+  
+  

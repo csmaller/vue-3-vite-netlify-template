@@ -1,10 +1,4 @@
-<style lang="scss" scoped></style>
-<script lang="ts" setup>
-import { RouterLink } from 'vue-router';
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from '@/components/HelloWorld.vue';
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <div class="container">
@@ -17,12 +11,4 @@ import HelloWorld from '@/components/HelloWorld.vue';
 
 <style lang="scss">
 @import '@/styles/main.scss';
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

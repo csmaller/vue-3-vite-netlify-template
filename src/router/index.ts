@@ -46,7 +46,6 @@ const router = createRouter({
     }
   },
 });
-console.log(router.getRoutes());
 
 /**
  * this is called before each route to check for protected pages

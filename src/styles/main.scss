@@ -6,6 +6,8 @@
  @import '~/primeflex/primeflex.css';
  
  @import './variables';
+ @import './toast';
+ @import './button';
  
  #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -25,6 +27,12 @@
  
  html {
    color: $dark;
+ }
+ 
+ .input-errors{
+  color:red;
+  font-size:9px;
+  margin-top:3px;
  }
  
  h1 {

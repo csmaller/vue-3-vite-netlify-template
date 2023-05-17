@@ -1,0 +1,143 @@
+/// Margin of a message
+/// @group message
+$messageMargin: 1rem 0;
+
+/// Padding of a message
+/// @group message
+$messagePadding: 0.5rem 1rem;
+
+/// Border width of a message
+/// @group message
+$messageBorderWidth: 0 0 0 4px;
+
+/// Font size of a message icon
+/// @group message
+$messageIconFontSize: 1.5rem;
+
+/// Font size of a message text
+/// @group message
+$messageTextFontSize: 1rem;
+
+/// Font weight of a message text
+/// @group message
+$messageTextFontWeight: 500;
+
+/// Padding of an inline message
+/// @group message
+$inlineMessagePadding: 6px;
+
+/// Margin of an inline message
+/// @group message
+$inlineMessageMargin: 0;
+
+/// Font size of an inline message icon
+/// @group message
+$inlineMessageIconFontSize: 1rem;
+
+/// Padding of an inline message text
+/// @group message
+$inlineMessageTextFontSize: 1rem;
+
+/// Border width of an inline message text
+/// @group message
+$inlineMessageBorderWidth: 1px;
+
+/// Font size of a toast message icon
+/// @group message
+$toastIconFontSize: 2rem;
+
+/// Margin of a toast message text
+/// @group message
+$toastMessageTextMargin: 0 0 0 1rem;
+
+/// Margin of a toast message
+/// @group message
+$toastMargin: 0 0 1rem 0;
+
+/// Padding of a toast message
+/// @group message
+$toastPadding: 1rem;
+
+/// Border width of a toast message
+/// @group message
+$toastBorderWidth: 0 0 0 4px;
+
+/// Box shadow of a toast message
+/// @group message
+$toastShadow: none;
+
+/// Opacity of a toast message
+/// @group message
+$toastOpacity: 0.9;
+
+/// Font weight of a toast message title text
+/// @group message
+$toastTitleFontWeight: 700;
+
+/// Margin of a toast message detail text
+/// @group message
+$toastDetailMargin: 6 0 0 0;
+
+/// Background of an info message
+/// @group message
+$infoMessageBg: blue;
+
+/// Border of an info message
+/// @group message
+$infoMessageBorder: 0 none;
+
+/// Text color of an info message
+/// @group message
+$infoMessageTextColor: blue;
+
+/// Icon color of an info message
+/// @group message
+$infoMessageIconColor: blue;
+
+/// Background of a success message
+/// @group message
+$successMessageBg: green;
+
+/// Border of a success message
+/// @group message
+$successMessageBorder: 0 none;
+
+/// Text color of a success message
+/// @group message
+$successMessageTextColor: green;
+
+/// Icon color of a success message
+/// @group message
+$successMessageIconColor: green;
+
+/// Background of a warning message
+/// @group message
+$warningMessageBg: $orange;
+
+/// Border of a warning message
+/// @group message
+$warningMessageBorder: 0 none;
+
+/// Text color of a warning message
+/// @group message
+$warningMessageTextColor: $orange;
+
+/// Icon color of a warning message
+/// @group message
+$warningMessageIconColor: $orange;
+
+/// Background of an error message
+/// @group message
+$errorMessageBg: red;
+
+/// Border of an error message
+/// @group message
+$errorMessageBorder: 0 none;
+
+/// Text color of an error message
+/// @group message
+$errorMessageTextColor: red;
+
+/// Icon color of an error message
+/// @group message
+$errorMessageIconColor: red;

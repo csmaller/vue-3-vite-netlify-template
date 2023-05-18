@@ -104,7 +104,7 @@ const doToast = () => {
     data-netlify="true"
     data-netlify-honeypot="bot-field"
     class="flex flex-wrap w-full"
-    action="/thankyou.html"
+    @submit.prevent="handleSubmit"
   >
     <div class="flex w-full">
       <h3>Contact Us</h3>

@@ -10,5 +10,12 @@ export default defineConfig({
       '~': path.resolve(__dirname, './node_modules'),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/styles/_variables.scss";`,
+      },
+    },
+  },
   plugins: [vue()],
 });

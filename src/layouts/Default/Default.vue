@@ -11,12 +11,12 @@ import { Nav, Address } from '@/components';
           <Nav />
         </div>
         <div id="main-content">
-          <div class="flex max-width">
+          <div class="flex w-full">
             <slot />
           </div>
         </div>
       </div>
-      <footer>
+      <footer class="flex w-full text-center justify-content-center align-items-center">
         <Address />
       </footer>
     </div>
@@ -27,6 +27,6 @@ import { Nav, Address } from '@/components';
 .max-width {
   width: 100%;
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 0 -10px;
 }
 </style>

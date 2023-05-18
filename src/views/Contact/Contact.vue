@@ -44,24 +44,6 @@ const error = ref<boolean>(false);
  * handle submit. dont need a service layer for now
  */
 const handleSubmit = async (e: Event) => {
-  // try {
-  //   error.value = false;
-  //   fetch('/', {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  //     body: encode({ 'form-name': 'contact', ...form.value }),
-  //   })
-  //     .then(() => {
-  //       if (!error.value) doToast();
-  //     })
-  //     .catch((error) => {
-  //       error.value = true;
-  //       doToast();
-  //     });
-  // } catch (e) {
-  //   console.log(e);
-  // }
-  // e.preventDefault();
   error.value = false;
   const axiosConfig: AxiosRequestConfig = {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -115,7 +97,7 @@ const doToast = () => {
 </script>
 
 <template>
-  <form
+  <!-- <form
     id="myForm"
     name="motive8contact"
     method="post"
@@ -130,7 +112,6 @@ const doToast = () => {
     <div class="w-full">
       <div class="field flex flex-column">
         <label for="name" class="required">Name</label>
-        <!-- <Skeleton v-if="tenantStore.loading" height="2.3rem" class="w-full" /> -->
         <InputText id="name" v-model="v$.name.$model" class="w-6" />
         <div v-for="error of v$.name.$errors" :key="error.$uid" class="input-errors">
           <div class="p-error">{{ error.$message }}</div>
@@ -153,6 +134,38 @@ const doToast = () => {
       </div>
       <Button id="save_btn" type="submit" label="Send" :disabled="v$.$invalid" class="button" />
     </div>
+  </form> -->
+  <form name="motive8contact" method="POST" data-netlify="true">
+    <p>
+      <label>
+        Your Name:
+        <input type="text" name="name" />
+      </label>
+    </p>
+    <p>
+      <label>
+        Your Email:
+        <input type="email" name="email" />
+      </label>
+    </p>
+    <p>
+      <label>
+        Your Role:
+        <select name="role[]" multiple>
+          <option value="leader">Leader</option>
+          <option value="follower">Follower</option>
+        </select>
+      </label>
+    </p>
+    <p>
+      <label>
+        Message:
+        <textarea name="message"></textarea>
+      </label>
+    </p>
+    <p>
+      <button type="submit">Send</button>
+    </p>
   </form>
 </template>
 

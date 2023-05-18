@@ -104,7 +104,7 @@ const doToast = () => {
     data-netlify="true"
     data-netlify-honeypot="bot-field"
     class="flex flex-wrap w-full"
-    @submit.prevent="handleSubmit"
+    submit="handleSubmit"
   >
     <div class="flex w-full">
       <h3>Contact Us</h3>
@@ -112,7 +112,7 @@ const doToast = () => {
     <div class="w-full">
       <div class="field flex flex-column">
         <label for="name" class="required">Name</label>
-        <InputText id="name" v-model="v$.name.$model" class="w-6" />
+        <InputText id="name" v-model="v$.name.$model" name="name" class="w-6" />
         <div v-for="error of v$.name.$errors" :key="error.$uid" class="input-errors">
           <div class="p-error">{{ error.$message }}</div>
         </div>
@@ -120,7 +120,7 @@ const doToast = () => {
 
       <div class="field flex flex-column">
         <label for="email" class="required">Email</label>
-        <InputText id="email" v-model="v$.email.$model" class="w-6" />
+        <InputText id="email" v-model="v$.email.$model" name="email" class="w-6" />
         <div v-for="error of v$.email.$errors" :key="error.$uid" class="input-errors">
           <div class="p-error">{{ error.$message }}</div>
         </div>

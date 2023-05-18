@@ -97,14 +97,15 @@ const doToast = () => {
 </script>
 
 <template>
-  <!-- <form
+  <form
     id="myForm"
     name="motive8contact"
     method="post"
     data-netlify="true"
     data-netlify-honeypot="bot-field"
     class="flex flex-wrap w-full"
-    submit="handleSubmit"
+    action="/contact"
+    @submit.prevent="handleSubmit"
   >
     <div class="flex w-full">
       <h3>Contact Us</h3>
@@ -134,12 +135,12 @@ const doToast = () => {
       </div>
       <Button id="save_btn" type="submit" label="Send" :disabled="v$.$invalid" class="button" />
     </div>
-  </form> -->
-  <form name="motive8contact" method="POST" data-netlify="true">
+  </form>
+  <!-- <form name="motive8contact" method="POST" data-netlify="true">
     <input type="hidden" name="form-name" value="motive8contact" />
     <input name="contact" />
-    <button name="submit" type="submit">Submits</button>
-  </form>
+    <button name="submit" type="submit">Submit</button>
+  </form> -->
 </template>
 
 <style scoped lang="scss"></style>

@@ -135,7 +135,7 @@ const doToast = () => {
       <Button id="save_btn" type="submit" label="Send" :disabled="v$.$invalid" class="button" />
     </div>
   </form> -->
-  <form name="motive8contact" method="POST" data-netlify="true" action="/thankyou.html">
+  <form name="motive8contact" method="POST" data-netlify="true" action="/#">
     <input name="contact" />
     <button name="submit" type="submit">Submits</button>
   </form>

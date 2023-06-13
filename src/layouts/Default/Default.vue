@@ -6,12 +6,12 @@ import { Nav, Address } from '@/components';
   <div id="default-layout">
     <div id="main-container" class="mt-0">
       <div id="main-container-scroll" class="flex flex-column h-screen overflow-auto">
-        <div class="header flex flex-wrap gap-3 align-items-center">
+        <div class="header flex flex-wrap gap-3 align-items-center p-2">
           <img src="/src/assets/motive8_logo.png" width="200" height="200" class="mt-0" />
           <Nav />
         </div>
         <div id="main-content">
-          <div class="flex w-full">
+          <div class="flex w-full md:p-4 p-1">
             <slot />
           </div>
         </div>

@@ -29,6 +29,18 @@
    color: $dark;
  }
  
+ #main-content {
+  padding: 0 60px;
+
+  p {
+    line-height: 28px;
+  }
+
+  @media  (max-width:500px){
+      padding: 10px 20px;
+  }
+ }
+
  .input-errors{
   color:red;
   font-size:9px;

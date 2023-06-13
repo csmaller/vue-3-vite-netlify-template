@@ -1,5 +1,4 @@
 import Address from './Address.vue';
-// Primevue global components
 import Button from 'primevue/button';
 import Card from 'primevue/card';
 import Checkbox from 'primevue/checkbox';
@@ -14,6 +13,7 @@ import Message from 'primevue/message';
 import Nav from './Nav.vue';
 import Password from 'primevue/password';
 import PrimeVue from 'primevue/config';
+import Profile from './Profile.vue';
 import Skeleton from 'primevue/skeleton';
 import Tag from 'primevue/tag';
 import Toast from 'primevue/toast';
@@ -42,4 +42,4 @@ export default {
   },
 };
 
-export { Nav, Address };
+export { Nav, Address, Profile };

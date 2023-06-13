@@ -103,7 +103,7 @@ const doToast = () => {
     method="post"
     data-netlify="true"
     data-netlify-honeypot="bot-field"
-    class="flex flex-wrap w-full"
+    class="flex flex-wrap w-full p-3 gap-3"
     @submit.prevent="handleSubmit"
   >
     <div class="flex w-full">

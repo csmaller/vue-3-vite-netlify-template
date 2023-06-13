@@ -2,10 +2,13 @@
 
 <template>
   <div>
-    <div>123 Smith St</div>
-    <div>Salt Lake City, UT 84121</div>
-    <div>123.123.2313</div>
-    <div><a mailto="info@motive8endurance.com">info@motive8endurance.com</a></div>
+    <small>
+      <div>1962 E Meadow Downs Way</div>
+      <div>Salt Lake City, UT 84121</div>
+      <div>
+        <a href="mailto:info@motive8endurance.com, coreysmaller@gmail.com" target="_blank">info@motive8endurance.com</a>
+      </div>
+    </small>
   </div>
 </template>
 

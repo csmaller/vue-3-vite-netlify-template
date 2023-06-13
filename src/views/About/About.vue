@@ -15,7 +15,7 @@ import { RouterLink } from 'vue-router';
       for race day.
     </p>
 
-    <img alt="Anna" src="@/assets/anna.png" class="anna_img flex text-center" />
+    <img alt="Anna" src="@/assets/anna_profile.jpeg" class="anna_img flex text-center" />
 
     <h4>ATHLETE TRAINER</h4>
     <p>
@@ -35,6 +35,6 @@ import { RouterLink } from 'vue-router';
 
 <style scoped lang="scss">
 .anna_img {
-  width: 700px;
+  width: 400px;
 }
 </style>

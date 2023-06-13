@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toRefs } from 'vue';
+import { toRefs, computed } from 'vue';
 
 interface PropsInterface {
   name: string;
@@ -10,6 +10,8 @@ interface PropsInterface {
 const props = defineProps<PropsInterface>();
 
 const { name, img, email, phone } = toRefs(props);
+
+const src = computed(() => new URL(`/src/assets/${img.value}`, import.meta.url).href);
 </script>
 
 <template>
@@ -23,7 +25,7 @@ const { name, img, email, phone } = toRefs(props);
     </h5>
     <div class="flex flex-column sm:flex-column md:flex-row gap-3 text-left py-4">
       <div class="flex-inline sm:w-full md:w-6">
-        <img :alt="`${img}`" src="@/assets/anna_profile.jpeg" class="img w-full" />
+        <img :alt="`${img}`" :src="src" class="img w-full" />
       </div>
       <div class="md:w-6 sm:w-full">
         <slot></slot>

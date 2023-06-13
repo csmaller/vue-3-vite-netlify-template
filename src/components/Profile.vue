@@ -23,7 +23,7 @@ const { name, img, email, phone } = toRefs(props);
     </h5>
     <div class="flex flex-column sm:flex-column md:flex-row gap-3 text-left py-4">
       <div class="flex-inline sm:w-full md:w-6">
-        <img :alt="`${img}`" :src="`@/assets/${img}`" class="img w-full" />
+        <img :alt="`${img}`" :src="img" class="img w-full" />
       </div>
       <div class="md:w-6 sm:w-full">
         <slot></slot>

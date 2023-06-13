@@ -4,7 +4,7 @@ import { Profile } from '@/components';
 
 <template>
   <div>
-    <Profile name="Anna Nemeckay" img="/assets/anna_profile.jpeg" phone="561-716-6650" email="anna@nemeckay.com">
+    <Profile name="Anna Nemeckay" img="anna_profile.jpeg" phone="561-716-6650" email="anna@nemeckay.com">
       <div class="w-fullsm:p-1">
         <p>
           USAT certified triathlon coach As a USAT certified coach, Training peaks Level II coach and multiple IM

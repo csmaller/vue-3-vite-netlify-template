@@ -4,7 +4,7 @@ import { Profile } from '@/components';
 
 <template>
   <div>
-    <Profile name="Anna Nemeckay" img="anna_profile.jpeg" phone="561-716-6650" email="anna@nemeckay.com">
+    <Profile name="Anna Nemeckay" img="anna_profile.jpeg" phone="561-716-6650" email="anna@motive8endurance.com">
       <div class="w-fullsm:p-1">
         <h5 class="mt-3 mb-2 underline">USAT certified triathlon coach</h5>
         <p>
